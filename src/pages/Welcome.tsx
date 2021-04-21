@@ -1,36 +1,57 @@
 import React from 'react'
-import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { 
+  Dimensions, 
+  Image, 
+  SafeAreaView, 
+  StyleSheet, 
+  Text, 
+  TouchableOpacity,
+  View
+} from 'react-native'
+import { Feather } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/core'
 
 import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 import wateringImg from '../assets/watering.png'
 
 export function Welcome () {
+  const navigation = useNavigation()
+
+  function handleStart () {
+    navigation.navigate('UserIdentification')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>
-        Gerencie {'\n'}
-        suas plantas {'\n'}
-        de forma fácil
-      </Text>
-
-      <Image 
-        source={wateringImg} 
-        style={styles.image} 
-      />
-
-      <Text style={styles.subtitle}>
-        Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você sempre que precisar
-      </Text>
-
-      <TouchableOpacity 
-        activeOpacity={0.7} 
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>
-          {'>'}
+      <View style={styles.wrapper}>
+        <Text style={styles.title}>
+          Gerencie {'\n'}
+          suas plantas de {'\n'}
+          forma fácil
         </Text>
-      </TouchableOpacity>
 
+        <Image 
+          resizeMode='contain'
+          source={wateringImg} 
+          style={styles.image} 
+        />
+
+        <Text style={styles.subtitle}>
+          Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você sempre que precisar
+        </Text>
+
+        <TouchableOpacity 
+          activeOpacity={0.7}
+          onPress={handleStart} 
+          style={styles.button}
+        >
+          <Feather 
+            name='chevron-right'
+            style={styles.buttonIcon}
+          />
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
@@ -46,24 +67,22 @@ const styles = StyleSheet.create({
     width: 56
   },
 
-  buttonText: {
+  buttonIcon: {
     color: colors.white,
-    fontSize: 24
+    fontSize: 32
   },
 
   container: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'space-between'
+    flex: 1
   },
 
   image: {
-    height: 284,
-    width: 292
+    height: Dimensions.get('window').width * 0.7,
   },
 
   subtitle: {
     color: colors.heading,
+    fontFamily: fonts.text,
     fontSize: 18,
     paddingHorizontal: 20,
     textAlign: 'center'
@@ -71,9 +90,18 @@ const styles = StyleSheet.create({
 
   title: {
     color: colors.heading,
-    fontSize: 32,
+    fontFamily: fonts.heading,
+    fontSize: 28,
     fontWeight: 'bold',
+    lineHeight: 34,
     marginTop: 38,
     textAlign: 'center'
+  },
+
+  wrapper: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'space-around',
+    paddingHorizontal: 20
   }
 })
