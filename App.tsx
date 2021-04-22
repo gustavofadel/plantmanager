@@ -4,9 +4,9 @@ import AppLoading from 'expo-app-loading'
 import Routes from './src/routes'
 
 import {
+  useFonts,
   Jost_400Regular,
   Jost_600SemiBold,
-  useFonts
 } from '@expo-google-fonts/jost'
 
 
@@ -17,7 +17,7 @@ export default function App () {
   })
 
   if (!fontsLoaded) {
-    <AppLoading />
+    return <AppLoading />
   }
 
   return (
