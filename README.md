@@ -3,9 +3,9 @@
 </h1>
 
 <p align="center">
-  <a href="#-project">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Getting started</a>
+  <a href="#getting-started">Getting started</a>
 </p>
 
 <p align="center">
@@ -54,3 +54,7 @@ $ json-server ./src/services/server.json --host Your_IP_Address --port 3333
 
 ## Contact
 E-mail: ghffadel@gmail.com
+
+---
+
+Made with 💜 by Gustavo Fadel 👋
