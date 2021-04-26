@@ -45,5 +45,12 @@ $ expo start
 
 Don't forget to add your IP address in ./src/services/api.ts file :)
 
+Open another bash and type this to use data from server.json:
+
+```bash
+# Using JSON Server
+$ json-server ./src/services/server.json --host Your_IP_Address --port 3333
+```
+
 ## Contact
 E-mail: ghffadel@gmail.com
