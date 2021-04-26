@@ -43,5 +43,7 @@ $ npm install
 $ expo start
 ```
 
+Don't forget to add your IP address in ./src/services/api.ts file :)
+
 ## Contact
 E-mail: ghffadel@gmail.com
