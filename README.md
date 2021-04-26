@@ -57,4 +57,4 @@ E-mail: ghffadel@gmail.com
 
 ---
 
-Made with 💜 by Gustavo Fadel 👋
+Made with 💜 by Gustavo Fadel.
